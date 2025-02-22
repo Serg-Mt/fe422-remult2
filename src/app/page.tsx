@@ -3,6 +3,7 @@ import Tile from "../demo/Tile";
 import Auth from "../demo/auth/Auth";
 import Admin from "../demo/Admin";
 import Todo from "../demo/todo/Todo";
+import { MyTodo } from '@/components/my-todo';
 
 export default function Home() {
   return (
@@ -53,7 +54,7 @@ export default function Home() {
       </Tile>
       <Auth />
       <Admin />
-      <Todo />
+      <MyTodo />
     </div>
   );
 }
