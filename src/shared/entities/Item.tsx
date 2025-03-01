@@ -1,7 +1,8 @@
-import { Entity, Fields } from 'remult';
+import { Allow, Entity, Fields } from 'remult';
 
-@Entity('task', {
-  allowApiCrud: true
+@Entity('item', {
+  allowApiCrud: true,
+  allowApiDelete:false
 })
 export class Item {
   @Fields.autoIncrement()
@@ -15,5 +16,12 @@ export class Item {
 
   @Fields.createdAt()
   createdAt?: Date;
+
+  @Fields.boolean({includeInApi:false})
+  del = false
+
+  @Fields.boolean({includeInApi:false})
+  temp = false
+
 
 }

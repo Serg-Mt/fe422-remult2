@@ -1,6 +1,28 @@
 /*
 * Global
 */
+.error {
+  background-color: red;
+  color: yellow;
+}
+
+.temp {
+  color: darkblue;
+
+  &::before {
+    content: 'loading';
+  }
+}
+
+.del {
+  color: rgb(52, 52, 52);
+
+  &::before {
+    content: 'deleting';
+  }
+}
+
+
 
 * {
   margin: 0;
@@ -50,6 +72,7 @@ a {
   text-decoration: inherit;
   transition: opacity 200ms;
 }
+
 a:hover {
   opacity: 0.7;
 }
@@ -78,7 +101,7 @@ p {
   color: var(--color-light);
 }
 
-p + p {
+p+p {
   margin-top: 12px;
 }
 
@@ -104,13 +127,13 @@ h3 {
   margin-top: 12px;
 }
 
-.button-row > .button,
-.button-row > button {
+.button-row>.button,
+.button-row>button {
   flex: 1 1 auto;
 }
 
-.button-row > .button:not(:first-child),
-.button-row > button:not(:first-child) {
+.button-row>.button:not(:first-child),
+.button-row>button:not(:first-child) {
   margin-left: 12px;
 }
 
@@ -194,6 +217,7 @@ input[type="text"] {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -215,10 +239,12 @@ input[type="text"] {
 }
 
 @keyframes pulseAnimation {
+
   0%,
   100% {
     background-size: 100% 100%;
   }
+
   50% {
     background-size: 150% 150%;
   }
@@ -262,8 +288,10 @@ input[type="text"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-left: -6px; /* half of gap */
-  margin-right: -6px; /* half of gap */
+  margin-left: -6px;
+  /* half of gap */
+  margin-right: -6px;
+  /* half of gap */
 }
 
 .tile {
@@ -273,10 +301,12 @@ input[type="text"] {
   border-radius: 12px;
   flex-grow: 1;
   flex-shrink: 0;
-  margin: 6px; /* half of gap */
+  margin: 6px;
+  /* half of gap */
   flex-basis: calc(100% - 24px);
   opacity: 0;
-  transform: translateY(16px); /* Initial transform state */
+  transform: translateY(16px);
+  /* Initial transform state */
   animation: fadeIn 1200ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
@@ -285,6 +315,7 @@ input[type="text"] {
     opacity: 0;
     transform: translateY(16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -294,18 +325,23 @@ input[type="text"] {
 .tile:first-child {
   animation-delay: 100ms;
 }
+
 .tile:nth-child(2) {
   animation-delay: 150ms;
 }
+
 .tile:nth-child(3) {
   animation-delay: 200ms;
 }
+
 .tile:nth-child(4) {
   animation-delay: 250ms;
 }
+
 .tile:nth-child(5) {
   animation-delay: 300ms;
 }
+
 .tile:nth-child(6) {
   animation-delay: 350ms;
 }
@@ -359,10 +395,12 @@ input[type="text"] {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 currentColor;
   }
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
   }
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 currentColor;
@@ -372,15 +410,19 @@ input[type="text"] {
 .tile.success {
   --accent-color: var(--color-green);
 }
+
 .tile.error {
   --accent-color: var(--color-red);
 }
+
 .tile.warning {
   --accent-color: var(--color-yellow);
 }
+
 .tile.loading {
   --accent-color: var(--color-yellow);
 }
+
 .tile.info {
   --accent-color: var(--color-blue);
 }
