@@ -4,6 +4,7 @@ import { Task } from "../demo/todo/Task";
 import { getUserFromRequest } from "./auth";
 import { User } from "../demo/auth/User";
 import { Item } from '@/shared/entities/Item';
+import { hogwarts } from '@/shared/entities';
 
 export const api = remultNextApp({
   getUser: getUserFromRequest,
@@ -14,5 +15,5 @@ export const api = remultNextApp({
     connectionString: process.env["DATABASE_URL"]
   }),
   admin: true,
-  entities: [Task, User, Item],
+  entities: [Task, User, Item, ...hogwarts],
 });

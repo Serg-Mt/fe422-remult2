@@ -18,10 +18,10 @@ export class Item {
   createdAt?: Date;
 
   @Fields.boolean({includeInApi:false})
-  del = false
+  del?:boolean
 
   @Fields.boolean({includeInApi:false})
-  temp = false
+  temp?:boolean
 
 
 }
